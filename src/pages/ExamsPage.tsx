@@ -52,10 +52,10 @@ export default function ExamsPage() {
           <DialogContent>
             <DialogHeader><DialogTitle>New Exam</DialogTitle></DialogHeader>
             <div className="space-y-3">
-              <Input placeholder="Exam name" value={name} onChange={e => setName(e.target.value)} />
-              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} />
+              <Input placeholder="Exam name" value={name} onChange={e => setName(e.target.value)} maxLength={200} />
+              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} maxLength={100} />
               <Input type="date" value={examDate} onChange={e => setExamDate(e.target.value)} />
-              <Input placeholder="Notes (optional)" value={notes} onChange={e => setNotes(e.target.value)} />
+              <Input placeholder="Notes (optional)" value={notes} onChange={e => setNotes(e.target.value)} maxLength={1000} />
               <Button onClick={add} className="w-full">Add Exam</Button>
             </div>
           </DialogContent>

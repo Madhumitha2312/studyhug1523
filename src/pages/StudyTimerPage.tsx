@@ -113,7 +113,7 @@ export default function StudyTimerPage() {
           </div>
 
           <div className="flex items-center gap-2 max-w-xs mx-auto">
-            <Input placeholder="New subject" value={newSubject} onChange={e => setNewSubject(e.target.value)} />
+            <Input placeholder="New subject" value={newSubject} onChange={e => setNewSubject(e.target.value)} maxLength={100} />
             <Button variant="outline" size="sm" onClick={addSubject}>Add</Button>
           </div>
 

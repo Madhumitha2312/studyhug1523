@@ -60,12 +60,12 @@ export default function PerformancePage() {
           <DialogContent>
             <DialogHeader><DialogTitle>Add Performance Record</DialogTitle></DialogHeader>
             <div className="space-y-3">
-              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} />
-              <Input placeholder="Test name (optional)" value={testName} onChange={e => setTestName(e.target.value)} />
+              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} maxLength={100} />
+              <Input placeholder="Test name (optional)" value={testName} onChange={e => setTestName(e.target.value)} maxLength={200} />
               <div className="flex gap-2">
-                <Input type="number" placeholder="Marks" value={marks} onChange={e => setMarks(e.target.value)} />
+                <Input type="number" placeholder="Marks" value={marks} onChange={e => setMarks(e.target.value)} min={0} max={10000} />
                 <span className="flex items-center text-muted-foreground">/</span>
-                <Input type="number" placeholder="Total" value={totalMarks} onChange={e => setTotalMarks(e.target.value)} />
+                <Input type="number" placeholder="Total" value={totalMarks} onChange={e => setTotalMarks(e.target.value)} min={1} max={10000} />
               </div>
               <Button onClick={add} className="w-full">Add Record</Button>
             </div>

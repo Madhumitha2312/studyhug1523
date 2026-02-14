@@ -68,6 +68,7 @@ export default function OnboardingPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="text-lg"
+                maxLength={100}
                 autoFocus
               />
             )}
@@ -80,7 +81,7 @@ export default function OnboardingPage() {
                     min={15}
                     max={480}
                     value={goal}
-                    onChange={(e) => setGoal(parseInt(e.target.value) || 60)}
+                    onChange={(e) => setGoal(Math.max(1, Math.min(1440, parseInt(e.target.value) || 60)))}
                     className="text-lg w-24"
                   />
                   <span className="text-muted-foreground">minutes per day</span>

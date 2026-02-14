@@ -61,10 +61,10 @@ export default function AssignmentsPage() {
           <DialogContent>
             <DialogHeader><DialogTitle>New Assignment</DialogTitle></DialogHeader>
             <div className="space-y-3">
-              <Input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} />
-              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} />
+              <Input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} maxLength={200} />
+              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} maxLength={100} />
               <Input type="date" value={dueDate} onChange={e => setDueDate(e.target.value)} />
-              <Input placeholder="Description (optional)" value={description} onChange={e => setDescription(e.target.value)} />
+              <Input placeholder="Description (optional)" value={description} onChange={e => setDescription(e.target.value)} maxLength={1000} />
               <Button onClick={add} className="w-full">Add Assignment</Button>
             </div>
           </DialogContent>

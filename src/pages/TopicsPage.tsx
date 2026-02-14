@@ -57,8 +57,8 @@ export default function TopicsPage() {
           <DialogContent>
             <DialogHeader><DialogTitle>New Topic</DialogTitle></DialogHeader>
             <div className="space-y-3">
-              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} />
-              <Input placeholder="Topic name" value={topicName} onChange={e => setTopicName(e.target.value)} />
+              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} maxLength={100} />
+              <Input placeholder="Topic name" value={topicName} onChange={e => setTopicName(e.target.value)} maxLength={200} />
               <Button onClick={add} className="w-full">Add Topic</Button>
             </div>
           </DialogContent>

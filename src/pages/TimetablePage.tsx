@@ -53,7 +53,7 @@ export default function TimetablePage() {
           <DialogContent>
             <DialogHeader><DialogTitle>New Timetable Entry</DialogTitle></DialogHeader>
             <div className="space-y-3">
-              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} />
+              <Input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)} maxLength={100} />
               <Select value={day} onValueChange={setDay}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>{DAYS.map((d, i) => <SelectItem key={i} value={String(i)}>{d}</SelectItem>)}</SelectContent>
@@ -62,7 +62,7 @@ export default function TimetablePage() {
                 <Input type="time" value={startTime} onChange={e => setStartTime(e.target.value)} />
                 <Input type="time" value={endTime} onChange={e => setEndTime(e.target.value)} />
               </div>
-              <Input placeholder="Location (optional)" value={location} onChange={e => setLocation(e.target.value)} />
+              <Input placeholder="Location (optional)" value={location} onChange={e => setLocation(e.target.value)} maxLength={200} />
               <Button onClick={add} className="w-full">Add Entry</Button>
             </div>
           </DialogContent>

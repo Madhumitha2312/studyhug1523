@@ -46,11 +46,11 @@ export default function SettingsPage() {
         <CardContent className="space-y-4">
           <div>
             <Label>Name</Label>
-            <Input value={name} onChange={e => setName(e.target.value)} />
+            <Input value={name} onChange={e => setName(e.target.value)} maxLength={100} />
           </div>
           <div>
             <Label>Daily Study Goal (minutes)</Label>
-            <Input type="number" value={goal} onChange={e => setGoal(parseInt(e.target.value) || 60)} />
+            <Input type="number" value={goal} onChange={e => setGoal(Math.max(1, Math.min(1440, parseInt(e.target.value) || 60)))} min={1} max={1440} />
           </div>
           <div className="text-sm text-muted-foreground">Email: {user?.email}</div>
           <Button onClick={save} disabled={saving}>{saving ? 'Saving...' : 'Save Changes'}</Button>
